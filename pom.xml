@@ -9,7 +9,7 @@
 
     <groupId>io.github.whiliang</groupId>
     <artifactId>spring-boot-starter-fastdfs</artifactId>
-    <version>1.2.7.RELEASE</version>
+    <version>1.2.8.RELEASE</version>
     <packaging>jar</packaging>
 
     <name>spring-boot-starter-fastdfs</name>
@@ -23,7 +23,32 @@
         <aspectj.version>1.8.7</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <developers>
+        <developer>
+            <name>whiliang</name>
+            <email>whiliang@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/whiliang/spring-boot-starter-fastdfs.git</connection>
+        <developerConnection>scm:git:https://github.com/whiliang/spring-boot-starter-fastdfs.git</developerConnection>
+        <url>https://github.com/whiliang/spring-boot-starter-fastdfs</url>
+        <tag>v${project.version}</tag>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

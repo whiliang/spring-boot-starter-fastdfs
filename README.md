@@ -20,6 +20,7 @@ spring:
     max-pool-size: 10
     min-pool-size: 1
     wait-times: 200
+    file-proxy-server: http://192.168.1.100:8080/
     tracker-list:
       - 192.168.1.100:22122
 ```
@@ -30,6 +31,9 @@ public class FileApi {
 
     @Resource
     private FastdfsFileService fastdfsFileService;
+  
+    @Resource
+    private FastdfsProperties fastdfsProperties;
     
     @PostMapping({"/test"})
     public BaseResponse test(MultipartFile file) {
@@ -38,6 +42,9 @@ public class FileApi {
             //file upload
             String relativeFilePath = this.fastdfsFileService.uploadWithoutGroup(FileCopyUtils.copyToByteArray(file.getInputStream()), FileUtil.getFileExtension(file.getOriginalFilename()));
             logger.info("upload relativeFilePath: {}", relativeFilePath);
+        
+            String absoluteFileUrl=fastdfsProperties.getFileProxyServer()+relativeFilePath;
+            logger.info("upload absoluteFileUrl: {}", absoluteFileUrl);
 
             //file download
             FileCopyUtils.copy(

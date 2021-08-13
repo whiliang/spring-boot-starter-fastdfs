@@ -40,6 +40,11 @@ public class FastdfsProperties {
      */
     private List<String> trackerList;
 
+    /**
+     * 文件服务器域名，eg: http://192.168.1.100:8080/
+     */
+    private String fileProxyServer;
+
 
     public boolean isEnable() {
         return enable;
@@ -87,5 +92,13 @@ public class FastdfsProperties {
 
     public void setTrackerList(List<String> trackerList) {
         this.trackerList = trackerList;
+    }
+
+    public String getFileProxyServer() {
+        return fileProxyServer;
+    }
+
+    public void setFileProxyServer(String fileProxyServer) {
+        this.fileProxyServer = fileProxyServer;
     }
 }
