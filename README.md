@@ -9,7 +9,7 @@ fastdfs starter for spring boot
      <dependency>
         <groupId>io.github.whiliang</groupId>
         <artifactId>spring-boot-starter-fastdfs</artifactId>
-        <version>1.2.7.RELEASE</version>
+        <version>1.2.8.RELEASE</version>
      </dependency>
 ```
 2.添加配置信息
